@@ -1,0 +1,29 @@
+package kotlinx.coroutines.channels;
+
+import kotlin.Metadata;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import tb.ar4;
+import tb.pg1;
+
+/* compiled from: Taobao */
+@Metadata(k = 3, mv = {1, 8, 0}, xi = 48)
+@DebugMetadata(c = "kotlinx.coroutines.channels.ProduceKt", f = "Produce.kt", i = {0, 0}, l = {153}, m = "awaitClose", n = {"$this$awaitClose", pg1.ATOM_EXT_block}, s = {"L$0", "L$1"})
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes10.dex */
+public final class ProduceKt$awaitClose$1 extends ContinuationImpl {
+    Object L$0;
+    Object L$1;
+    int label;
+    /* synthetic */ Object result;
+
+    public ProduceKt$awaitClose$1(ar4<? super ProduceKt$awaitClose$1> ar4Var) {
+        super(ar4Var);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) {
+        this.result = obj;
+        this.label |= Integer.MIN_VALUE;
+        return ProduceKt.a(null, null, this);
+    }
+}

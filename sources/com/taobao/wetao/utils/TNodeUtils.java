@@ -1,0 +1,178 @@
+package com.taobao.wetao.utils;
+
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.android.preload.core.task.PreloadTaskEntity;
+import java.util.HashMap;
+import tb.gol;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes9.dex */
+public class TNodeUtils {
+    public static volatile transient /* synthetic */ IpChange $ipChange = null;
+    private static final String ENGINE_VERSION = "V2_1_2";
+    public static final String GUANGGUANG_LOCAL_DSL_VERSION = "17.0.162";
+    public static final String GUANGGUANG_LOCAL_URL = "./TBWeiTao.bundle/guangguang.png";
+    public static final String GUANGUANG_INITDATA_KEY = "guangguang";
+    private static final String JSON_AWP_WEITAO4_CARDLIST = "https://h5.m.taobao.com/app/weitaostar/v1/wetao-external.png";
+    private static final String ORANGE_GROUP_FULL_PAGE = "ShortVideo";
+    private static final String ORANGE_GROUP_UGC = "ugc_switch";
+    private static final String PAD_VERSION = "Vpad1";
+
+    public static String getGuangGuangUrl(String str) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (String) ipChange.ipc$dispatch("eb77add6", new Object[]{str});
+        }
+        return gol.c(str);
+    }
+
+    public static void injectShortLinkMap(HashMap<String, gol.a> hashMap) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("41b250d5", new Object[]{hashMap});
+            return;
+        }
+        gol.a aVar = new gol.a();
+        aVar.b = "https://g.alicdn.com/tnode/guangguang/17.0.162/main.json.json?policy=localFirst";
+        aVar.d = GUANGGUANG_LOCAL_URL;
+        aVar.c = "page_guangguangVpad1";
+        aVar.e = GUANGGUANG_LOCAL_DSL_VERSION;
+        hashMap.put(gol.GUANGGUANG_SHORT_LINK, aVar);
+        gol.a aVar2 = new gol.a();
+        aVar2.b = "https://g.alicdn.com/tnode/guangguang/15.02.112/main.json.json";
+        aVar2.d = "./TBWeiTao.bundle/guangguang-launch.png";
+        aVar2.e = "15.01.111";
+        aVar2.c = "page_tab2videoV2_1_2";
+        hashMap.put(gol.TAB2_VIDEO_LINK, aVar2);
+        gol.a aVar3 = new gol.a();
+        aVar3.b = "https://g.alicdn.com/tnode/guangguangrecommend/0.11.64/main.json.json";
+        aVar3.e = "./TBWeiTao.bundle/guangguangdetail.png";
+        aVar3.d = "./TBWeiTao.bundle/guangguangdetail.png";
+        aVar3.c = "page_detailV2_1_2";
+        hashMap.put(PreloadTaskEntity.PAGE_DETAIL, aVar3);
+        gol.a aVar4 = new gol.a();
+        aVar4.b = "https://g.alicdn.com/tnode/guangguangscanner/0.0.9/main.json.json";
+        aVar4.c = "page_scannerV2_1_2";
+        hashMap.put("page_scanner", aVar4);
+        gol.a aVar5 = new gol.a();
+        aVar5.b = "https://g.alicdn.com/tnode/guangguangsearch/0.4.43/main.json.json";
+        aVar5.c = "page_searchV2_1_2";
+        hashMap.put("page_search", aVar5);
+        gol.a aVar6 = new gol.a();
+        aVar6.b = "https://g.alicdn.com/tnode/guangguangdetail/0.2.121/main.json.json";
+        aVar6.e = "./TBWeiTao.bundle/guangguangcontent.png";
+        aVar6.d = "./TBWeiTao.bundle/guangguangcontent.png";
+        aVar6.c = "page_contentV2_1_2";
+        hashMap.put("page_content", aVar6);
+        gol.a aVar7 = new gol.a();
+        aVar7.b = "https://g.alicdn.com/tnode/mediabroswer/0.0.11/main.json.json";
+        aVar7.c = "page_mediabrowserVpad1";
+        hashMap.put("page_mediabrowser", aVar7);
+        gol.a aVar8 = new gol.a();
+        aVar8.b = "https://g.alicdn.com/tnode/guangguangprofile/1.0.116/main.json.json";
+        aVar8.c = "page_profileV2_1_2";
+        hashMap.put("page_profile", aVar8);
+        gol.a aVar9 = new gol.a();
+        aVar9.b = "https://g.alicdn.com/tnode/guangguangrecommendaccount/0.0.6/main.json.json";
+        aVar9.c = "page_recommendaccountV2_1_2";
+        hashMap.put("page_recommendaccount", aVar9);
+        gol.a aVar10 = new gol.a();
+        aVar10.b = "https://g.alicdn.com/tnode/guangguangrecent/0.0.14/main.json.json";
+        aVar10.c = "page_recentV2_1_2";
+        hashMap.put("page_recent", aVar10);
+        gol.a aVar11 = new gol.a();
+        aVar11.b = "https://g.alicdn.com/tnode/guangguanginteractmessage/0.1.1/main.json.json";
+        aVar11.c = "page_interactmessageV2_1_2";
+        hashMap.put("page_interactmessage", aVar11);
+        gol.a aVar12 = new gol.a();
+        aVar12.b = "https://g.alicdn.com/tnode/guangguangvideo/0.0.8/main.json.json";
+        aVar12.c = "page_guangguanglookV2_1_2";
+        hashMap.put("page_guangguanglook", aVar12);
+        gol.a aVar13 = new gol.a();
+        aVar13.b = "https://g.alicdn.com/tnode/guangguangcircle/0.2.24/main.json.json";
+        aVar13.c = "page_guangguangcircleV2_1_2";
+        hashMap.put("page_guangguangcircle", aVar13);
+        gol.a aVar14 = new gol.a();
+        aVar14.b = "https://g.alicdn.com/tnode/guangguangfollow/1.0.52/main.json.json";
+        aVar14.e = "./TBWeiTao.bundle/dsl/guangguangfollow.ql";
+        aVar14.d = "./TBWeiTao.bundle/dsl/guangguangfollow.ql";
+        aVar14.c = "page_guangguangfollowV2_1_2";
+        hashMap.put("page_guangguangfollow", aVar14);
+        gol.a aVar15 = new gol.a();
+        aVar15.b = "https://g.alicdn.com/taobao_interaction/comment_tnode/0.6.11/main.json.json";
+        aVar15.c = "page_commentV2_1_2";
+        hashMap.put("page_comment", aVar15);
+        gol.a aVar16 = new gol.a();
+        aVar16.f20133a = "ugc_switch";
+        aVar16.b = "https://g.alicdn.com/ask-everyone/answer-publisher/0.0.10/main.json.json";
+        aVar16.c = "page_askanswerpublishV2_1_2";
+        hashMap.put("page_askanswerpublish@ugc", aVar16);
+        hashMap.put("page_askanswerpublish", aVar16);
+        gol.a aVar17 = new gol.a();
+        aVar17.f20133a = "ugc_switch";
+        aVar17.b = "https://g.alicdn.com/ask-everyone/question-publisher/0.0.1/main.json.json";
+        aVar17.c = "page_askquestionpublishV2_1_2";
+        hashMap.put("page_askquestionpublish@ugc", aVar17);
+        hashMap.put("page_askquestionpublish", aVar17);
+        gol.a aVar18 = new gol.a();
+        aVar18.b = "https://g.alicdn.com/tnode/guangguanggoods/0.0.12/main.json.json";
+        aVar18.c = "page_goodsdiscussV2_1_2";
+        hashMap.put("page_goodsdiscuss", aVar18);
+        gol.a aVar19 = new gol.a();
+        aVar19.f20133a = "ugc_switch";
+        aVar19.b = "https://g.alicdn.com/ask-everyone/list/0.0.1/main.json.json";
+        aVar19.c = "page_asklistV2_1_2";
+        hashMap.put("page_asklist@ugc", aVar19);
+        gol.a aVar20 = new gol.a();
+        aVar20.f20133a = "ugc_switch";
+        aVar20.b = "https://g.alicdn.com/ask-everyone/detail/0.0.1/main.json.json";
+        aVar20.c = "page_askdetailV2_1_2";
+        hashMap.put("page_askdetail@ugc", aVar20);
+        gol.a aVar21 = new gol.a();
+        aVar21.f20133a = "ugc_switch";
+        aVar21.b = "https://g.alicdn.com/ask-everyone/aggregate-detail/0.0.1/main.json.json";
+        aVar21.c = "page_askaggregatedetailV2_1_2";
+        hashMap.put("page_askaggregatedetail@ugc", aVar21);
+        gol.a aVar22 = new gol.a();
+        aVar22.f20133a = "ugc_switch";
+        aVar22.b = "https://g.alicdn.com/ask-everyone/answer/0.0.1/main.json.json";
+        aVar22.c = "page_askanswerV2_1_2";
+        hashMap.put("page_askanswer@ugc", aVar22);
+        gol.a aVar23 = new gol.a();
+        aVar23.f20133a = "ugc_switch";
+        aVar23.b = "https://g.alicdn.com/tnode/ratedetail/0.0.1/main.json.json";
+        aVar23.c = "page_ratedetailV2_1_2";
+        hashMap.put("page_ratedetail@ugc", aVar23);
+        gol.a aVar24 = new gol.a();
+        aVar24.f20133a = "ShortVideo";
+        aVar24.b = "https://g.alicdn.com/tnode/fullpageshortvideo/5.1.55/main.json.json";
+        aVar24.c = "page_fullpageV2_1_2";
+        hashMap.put("page_fullpage", aVar24);
+        gol.a aVar25 = new gol.a();
+        aVar25.b = "https://g.alicdn.com/tnode/guangguangtopic/0.0.5/main.json.json";
+        aVar25.c = "page_guangguangtopicV2_1_2";
+        hashMap.put("page_guangguangtopic", aVar25);
+        gol.a aVar26 = new gol.a();
+        aVar26.b = "https://g.alicdn.com/tnode/ErrorPage/0.0.1/main.json.json";
+        aVar26.c = "page_error";
+        aVar26.e = "./TBWeiTao.bundle/page-error.png";
+        aVar26.d = "./TBWeiTao.bundle/page-error.png";
+        hashMap.put("page_error", aVar26);
+        gol.a aVar27 = new gol.a();
+        aVar27.b = "https://g.alicdn.com/tnode/guangguangdiscovery/0.0.11/main.json.json";
+        aVar27.c = "page_guangguangdiscoveryVpad1";
+        hashMap.put("page_guangguangdiscovery", aVar27);
+        gol.a aVar28 = new gol.a();
+        aVar28.b = "https://g.alicdn.com/tnode/guangguangsideprofile/0.0.5/main.json.json";
+        aVar28.c = "page_guangguangsideprofileVpad1";
+        hashMap.put("page_guangguangsideprofile", aVar28);
+        gol.a aVar29 = new gol.a();
+        aVar29.b = "https://g.alicdn.com/tnode/liveinteract/0.0.1/main.json.json";
+        aVar29.c = "page_liveinteractV2_1_2";
+        hashMap.put("page_liveinteract", aVar29);
+        gol.a aVar30 = new gol.a();
+        aVar30.b = "https://g.alicdn.com/tnode/guangguangsidelive/0.0.1/main.json.json";
+        aVar30.c = "page_guangguangsideliveV2_1_2";
+        hashMap.put("page_guangguangsidelive", aVar30);
+    }
+}

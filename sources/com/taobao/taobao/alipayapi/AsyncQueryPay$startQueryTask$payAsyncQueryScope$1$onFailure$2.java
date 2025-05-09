@@ -1,0 +1,48 @@
+package com.taobao.taobao.alipayapi;
+
+import com.android.alibaba.ip.runtime.InstantReloadException;
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.taobao.internal.PayResultInfo;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Lambda;
+import tb.a8d;
+import tb.d1a;
+import tb.xhv;
+
+/* compiled from: Taobao */
+@Metadata(d1 = {"\u0000\b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0010\u0003\u001a\u00020\u0000H\n¢\u0006\u0004\b\u0001\u0010\u0002"}, d2 = {"Ltb/xhv;", "invoke", "()V", "<anonymous>"}, k = 3, mv = {1, 4, 1})
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes8.dex */
+public final class AsyncQueryPay$startQueryTask$payAsyncQueryScope$1$onFailure$2 extends Lambda implements d1a<xhv> {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+    public final /* synthetic */ String $failureUrl;
+    public final /* synthetic */ PayResultInfo $payResultInfo;
+    public final /* synthetic */ AsyncQueryPay$startQueryTask$payAsyncQueryScope$1 this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public AsyncQueryPay$startQueryTask$payAsyncQueryScope$1$onFailure$2(AsyncQueryPay$startQueryTask$payAsyncQueryScope$1 asyncQueryPay$startQueryTask$payAsyncQueryScope$1, String str, PayResultInfo payResultInfo) {
+        super(0);
+        this.this$0 = asyncQueryPay$startQueryTask$payAsyncQueryScope$1;
+        this.$failureUrl = str;
+        this.$payResultInfo = payResultInfo;
+    }
+
+    public static /* synthetic */ Object ipc$super(AsyncQueryPay$startQueryTask$payAsyncQueryScope$1$onFailure$2 asyncQueryPay$startQueryTask$payAsyncQueryScope$1$onFailure$2, String str, Object... objArr) {
+        str.hashCode();
+        int hashCode = str.hashCode();
+        throw new InstantReloadException("String switch could not find '" + str + "' with hashcode " + hashCode + " in com/taobao/taobao/alipayapi/AsyncQueryPay$startQueryTask$payAsyncQueryScope$1$onFailure$2");
+    }
+
+    @Override // tb.d1a
+    /* renamed from: invoke  reason: avoid collision after fix types in other method */
+    public final void invoke2() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("7560ccff", new Object[]{this});
+            return;
+        }
+        a8d e = this.this$0.f12903a.e();
+        if (e != null) {
+            e.b(this.$failureUrl, this.$payResultInfo);
+        }
+    }
+}

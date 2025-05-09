@@ -1,0 +1,23 @@
+package tb;
+
+import android.content.SharedPreferences;
+import com.android.alibaba.ip.runtime.IpChange;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes2.dex */
+public class ymo {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+
+    static {
+        t2o.a(962593004);
+    }
+
+    public static void a(SharedPreferences.Editor editor) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("1ae59190", new Object[]{editor});
+        } else {
+            editor.apply();
+        }
+    }
+}

@@ -1,0 +1,14 @@
+package tb;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes6.dex */
+public class bm2 extends boj {
+    static {
+        t2o.a(578814132);
+    }
+
+    public bm2(xnj xnjVar) {
+        super(xnjVar);
+        addComponentFilterItem(new cm2());
+    }
+}

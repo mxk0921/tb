@@ -1,0 +1,6 @@
+package tb;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes10.dex */
+public interface i2a<P1, P2, P3, P4, P5, P6, P7, P8, P9, R> extends f1a<R> {
+}

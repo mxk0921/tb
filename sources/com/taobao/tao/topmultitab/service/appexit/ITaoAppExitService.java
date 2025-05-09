@@ -1,0 +1,11 @@
+package com.taobao.tao.topmultitab.service.appexit;
+
+import com.taobao.tao.topmultitab.service.base.IHomePageService;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes8.dex */
+public interface ITaoAppExitService extends IHomePageService {
+    public static final String SERVICE_NAME = "TaoAppExitService";
+
+    boolean exitBy2Click();
+}

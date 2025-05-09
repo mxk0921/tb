@@ -1,0 +1,13 @@
+package tb;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes6.dex */
+public class ymx {
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final /* synthetic */ int f32206a = 0;
+
+    static {
+        t2o.a(993002121);
+    }
+}

@@ -1,0 +1,414 @@
+package androidx.appcompat.widget;
+
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.method.KeyListener;
+import android.util.AttributeSet;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputConnection;
+import android.view.inspector.PropertyMapper;
+import android.view.inspector.PropertyReader;
+import android.widget.MultiAutoCompleteTextView;
+import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.view.TintableBackgroundView;
+import androidx.core.widget.TintableCompoundDrawablesView;
+import com.android.alibaba.ip.runtime.InstantReloadException;
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.taobao.R;
+import tb.t21;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes.dex */
+public class AppCompatMultiAutoCompleteTextView extends MultiAutoCompleteTextView implements TintableBackgroundView, EmojiCompatConfigurationView, TintableCompoundDrawablesView {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+    private static final int[] TINT_ATTRS = {16843126};
+    private final AppCompatEmojiEditTextHelper mAppCompatEmojiEditTextHelper;
+    private final AppCompatBackgroundHelper mBackgroundTintHelper;
+    private final AppCompatTextHelper mTextHelper;
+
+    /* compiled from: Taobao */
+    /* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes.dex */
+    public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatMultiAutoCompleteTextView> {
+        public static volatile transient /* synthetic */ IpChange $ipChange;
+        private int mBackgroundTintId;
+        private int mBackgroundTintModeId;
+        private int mDrawableTintId;
+        private int mDrawableTintModeId;
+        private boolean mPropertiesMapped = false;
+
+        @Override // android.view.inspector.InspectionCompanion
+        public void mapProperties(PropertyMapper propertyMapper) {
+            int mapObject;
+            int mapObject2;
+            int mapObject3;
+            int mapObject4;
+            IpChange ipChange = $ipChange;
+            if (ipChange instanceof IpChange) {
+                ipChange.ipc$dispatch("3ddac953", new Object[]{this, propertyMapper});
+                return;
+            }
+            mapObject = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
+            this.mBackgroundTintId = mapObject;
+            mapObject2 = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
+            this.mBackgroundTintModeId = mapObject2;
+            mapObject3 = propertyMapper.mapObject("drawableTint", R.attr.drawableTint);
+            this.mDrawableTintId = mapObject3;
+            mapObject4 = propertyMapper.mapObject("drawableTintMode", R.attr.drawableTintMode);
+            this.mDrawableTintModeId = mapObject4;
+            this.mPropertiesMapped = true;
+        }
+
+        public void readProperties(AppCompatMultiAutoCompleteTextView appCompatMultiAutoCompleteTextView, PropertyReader propertyReader) {
+            ColorStateList compoundDrawableTintList;
+            PorterDuff.Mode compoundDrawableTintMode;
+            IpChange ipChange = $ipChange;
+            if (ipChange instanceof IpChange) {
+                ipChange.ipc$dispatch("31ac6031", new Object[]{this, appCompatMultiAutoCompleteTextView, propertyReader});
+            } else if (this.mPropertiesMapped) {
+                propertyReader.readObject(this.mBackgroundTintId, appCompatMultiAutoCompleteTextView.getBackgroundTintList());
+                propertyReader.readObject(this.mBackgroundTintModeId, appCompatMultiAutoCompleteTextView.getBackgroundTintMode());
+                int i = this.mDrawableTintId;
+                compoundDrawableTintList = appCompatMultiAutoCompleteTextView.getCompoundDrawableTintList();
+                propertyReader.readObject(i, compoundDrawableTintList);
+                int i2 = this.mDrawableTintModeId;
+                compoundDrawableTintMode = appCompatMultiAutoCompleteTextView.getCompoundDrawableTintMode();
+                propertyReader.readObject(i2, compoundDrawableTintMode);
+            } else {
+                throw t21.a();
+            }
+        }
+    }
+
+    public AppCompatMultiAutoCompleteTextView(Context context) {
+        this(context, null);
+    }
+
+    public static /* synthetic */ Object ipc$super(AppCompatMultiAutoCompleteTextView appCompatMultiAutoCompleteTextView, String str, Object... objArr) {
+        switch (str.hashCode()) {
+            case -1919838530:
+                super.setBackgroundResource(((Number) objArr[0]).intValue());
+                return null;
+            case -1282673432:
+                return new Integer(super.getInputType());
+            case -1162739065:
+                return super.onCreateInputConnection((EditorInfo) objArr[0]);
+            case -718650051:
+                super.setFocusable(((Boolean) objArr[0]).booleanValue());
+                return null;
+            case -636489373:
+                return new Boolean(super.isClickable());
+            case -346750530:
+                super.setRawInputType(((Number) objArr[0]).intValue());
+                return null;
+            case 245313715:
+                return new Boolean(super.isFocusable());
+            case 448480424:
+                super.drawableStateChanged();
+                return null;
+            case 714889707:
+                super.setCompoundDrawablesRelative((Drawable) objArr[0], (Drawable) objArr[1], (Drawable) objArr[2], (Drawable) objArr[3]);
+                return null;
+            case 725209897:
+                super.setLongClickable(((Boolean) objArr[0]).booleanValue());
+                return null;
+            case 935095605:
+                super.setTextAppearance((Context) objArr[0], ((Number) objArr[1]).intValue());
+                return null;
+            case 945148159:
+                super.setCompoundDrawables((Drawable) objArr[0], (Drawable) objArr[1], (Drawable) objArr[2], (Drawable) objArr[3]);
+                return null;
+            case 1680936578:
+                super.setKeyListener((KeyListener) objArr[0]);
+                return null;
+            case 1846237511:
+                return new Boolean(super.isLongClickable());
+            case 1889417753:
+                super.setBackgroundDrawable((Drawable) objArr[0]);
+                return null;
+            case 2010225293:
+                super.setClickable(((Boolean) objArr[0]).booleanValue());
+                return null;
+            default:
+                int hashCode = str.hashCode();
+                throw new InstantReloadException("String switch could not find '" + str + "' with hashcode " + hashCode + " in androidx/appcompat/widget/AppCompatMultiAutoCompleteTextView");
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void drawableStateChanged() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("1abb44a8", new Object[]{this});
+            return;
+        }
+        super.drawableStateChanged();
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.applySupportBackgroundTint();
+        }
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.applyCompoundDrawablesTints();
+        }
+    }
+
+    @Override // androidx.core.view.TintableBackgroundView
+    public ColorStateList getSupportBackgroundTintList() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (ColorStateList) ipChange.ipc$dispatch("922e88ad", new Object[]{this});
+        }
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            return appCompatBackgroundHelper.getSupportBackgroundTintList();
+        }
+        return null;
+    }
+
+    @Override // androidx.core.view.TintableBackgroundView
+    public PorterDuff.Mode getSupportBackgroundTintMode() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (PorterDuff.Mode) ipChange.ipc$dispatch("43ef50d5", new Object[]{this});
+        }
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            return appCompatBackgroundHelper.getSupportBackgroundTintMode();
+        }
+        return null;
+    }
+
+    @Override // androidx.core.widget.TintableCompoundDrawablesView
+    public ColorStateList getSupportCompoundDrawablesTintList() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (ColorStateList) ipChange.ipc$dispatch("c33dbd83", new Object[]{this});
+        }
+        return this.mTextHelper.getCompoundDrawableTintList();
+    }
+
+    @Override // androidx.core.widget.TintableCompoundDrawablesView
+    public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (PorterDuff.Mode) ipChange.ipc$dispatch("e3d1c32b", new Object[]{this});
+        }
+        return this.mTextHelper.getCompoundDrawableTintMode();
+    }
+
+    public void initEmojiKeyListener(AppCompatEmojiEditTextHelper appCompatEmojiEditTextHelper) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("5dd14352", new Object[]{this, appCompatEmojiEditTextHelper});
+            return;
+        }
+        KeyListener keyListener = getKeyListener();
+        if (appCompatEmojiEditTextHelper.isEmojiCapableKeyListener(keyListener)) {
+            boolean isFocusable = super.isFocusable();
+            boolean isClickable = super.isClickable();
+            boolean isLongClickable = super.isLongClickable();
+            int inputType = super.getInputType();
+            KeyListener keyListener2 = appCompatEmojiEditTextHelper.getKeyListener(keyListener);
+            if (keyListener2 != keyListener) {
+                super.setKeyListener(keyListener2);
+                super.setRawInputType(inputType);
+                super.setFocusable(isFocusable);
+                super.setClickable(isClickable);
+                super.setLongClickable(isLongClickable);
+            }
+        }
+    }
+
+    @Override // androidx.appcompat.widget.EmojiCompatConfigurationView
+    public boolean isEmojiCompatEnabled() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("7057c88e", new Object[]{this})).booleanValue();
+        }
+        return this.mAppCompatEmojiEditTextHelper.isEnabled();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (InputConnection) ipChange.ipc$dispatch("bab20287", new Object[]{this, editorInfo});
+        }
+        return this.mAppCompatEmojiEditTextHelper.onCreateInputConnection(AppCompatHintHelper.onCreateInputConnection(super.onCreateInputConnection(editorInfo), editorInfo, this), editorInfo);
+    }
+
+    @Override // android.view.View
+    public void setBackgroundDrawable(Drawable drawable) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("709e3a19", new Object[]{this, drawable});
+            return;
+        }
+        super.setBackgroundDrawable(drawable);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.onSetBackgroundDrawable(drawable);
+        }
+    }
+
+    @Override // android.view.View
+    public void setBackgroundResource(int i) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("8d9196be", new Object[]{this, new Integer(i)});
+            return;
+        }
+        super.setBackgroundResource(i);
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.onSetBackgroundResource(i);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("3855d0ff", new Object[]{this, drawable, drawable2, drawable3, drawable4});
+            return;
+        }
+        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.onSetCompoundDrawables();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("2a9c59eb", new Object[]{this, drawable, drawable2, drawable3, drawable4});
+            return;
+        }
+        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.onSetCompoundDrawables();
+        }
+    }
+
+    @Override // android.widget.AutoCompleteTextView
+    public void setDropDownBackgroundResource(int i) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("1420f14d", new Object[]{this, new Integer(i)});
+        } else {
+            setDropDownBackgroundDrawable(AppCompatResources.getDrawable(getContext(), i));
+        }
+    }
+
+    @Override // androidx.appcompat.widget.EmojiCompatConfigurationView
+    public void setEmojiCompatEnabled(boolean z) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("5a82ad52", new Object[]{this, new Boolean(z)});
+        } else {
+            this.mAppCompatEmojiEditTextHelper.setEnabled(z);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setKeyListener(KeyListener keyListener) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("64310e82", new Object[]{this, keyListener});
+        } else {
+            super.setKeyListener(this.mAppCompatEmojiEditTextHelper.getKeyListener(keyListener));
+        }
+    }
+
+    @Override // androidx.core.view.TintableBackgroundView
+    public void setSupportBackgroundTintList(ColorStateList colorStateList) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("2ac460f9", new Object[]{this, colorStateList});
+            return;
+        }
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.setSupportBackgroundTintList(colorStateList);
+        }
+    }
+
+    @Override // androidx.core.view.TintableBackgroundView
+    public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("a848d4cb", new Object[]{this, mode});
+            return;
+        }
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
+        if (appCompatBackgroundHelper != null) {
+            appCompatBackgroundHelper.setSupportBackgroundTintMode(mode);
+        }
+    }
+
+    @Override // androidx.core.widget.TintableCompoundDrawablesView
+    public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("329df37b", new Object[]{this, colorStateList});
+            return;
+        }
+        this.mTextHelper.setCompoundDrawableTintList(colorStateList);
+        this.mTextHelper.applyCompoundDrawablesTints();
+    }
+
+    @Override // androidx.core.widget.TintableCompoundDrawablesView
+    public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("5f091fcd", new Object[]{this, mode});
+            return;
+        }
+        this.mTextHelper.setCompoundDrawableTintMode(mode);
+        this.mTextHelper.applyCompoundDrawablesTints();
+    }
+
+    @Override // android.widget.TextView
+    public void setTextAppearance(Context context, int i) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("37bc6d35", new Object[]{this, context, new Integer(i)});
+            return;
+        }
+        super.setTextAppearance(context, i);
+        AppCompatTextHelper appCompatTextHelper = this.mTextHelper;
+        if (appCompatTextHelper != null) {
+            appCompatTextHelper.onSetTextAppearance(context, i);
+        }
+    }
+
+    public AppCompatMultiAutoCompleteTextView(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, R.attr.autoCompleteTextViewStyle);
+    }
+
+    public AppCompatMultiAutoCompleteTextView(Context context, AttributeSet attributeSet, int i) {
+        super(TintContextWrapper.wrap(context), attributeSet, i);
+        ThemeUtils.checkAppCompatTheme(this, getContext());
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(getContext(), attributeSet, TINT_ATTRS, i, 0);
+        if (obtainStyledAttributes.hasValue(0)) {
+            setDropDownBackgroundDrawable(obtainStyledAttributes.getDrawable(0));
+        }
+        obtainStyledAttributes.recycle();
+        AppCompatBackgroundHelper appCompatBackgroundHelper = new AppCompatBackgroundHelper(this);
+        this.mBackgroundTintHelper = appCompatBackgroundHelper;
+        appCompatBackgroundHelper.loadFromAttributes(attributeSet, i);
+        AppCompatTextHelper appCompatTextHelper = new AppCompatTextHelper(this);
+        this.mTextHelper = appCompatTextHelper;
+        appCompatTextHelper.loadFromAttributes(attributeSet, i);
+        appCompatTextHelper.applyCompoundDrawablesTints();
+        AppCompatEmojiEditTextHelper appCompatEmojiEditTextHelper = new AppCompatEmojiEditTextHelper(this);
+        this.mAppCompatEmojiEditTextHelper = appCompatEmojiEditTextHelper;
+        appCompatEmojiEditTextHelper.loadFromAttributes(attributeSet, i);
+        initEmojiKeyListener(appCompatEmojiEditTextHelper);
+    }
+}

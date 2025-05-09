@@ -1,0 +1,509 @@
+package com.taobao.trade.uikit.feature.view;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.AbsListView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import com.android.alibaba.ip.runtime.InstantReloadException;
+import com.android.alibaba.ip.runtime.IpChange;
+import com.taobao.trade.uikit.feature.utils.FeatureList;
+import java.util.ArrayList;
+import java.util.List;
+import tb.a33;
+import tb.h5u;
+import tb.hv;
+import tb.kbi;
+import tb.md0;
+import tb.ps9;
+import tb.qif;
+import tb.qxo;
+import tb.rig;
+import tb.t2o;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes9.dex */
+public class TListView extends ListView implements AbsListView.OnScrollListener {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+    private FeatureList<ListView> mFeatureList;
+    private List<AbsListView.OnScrollListener> mOnScrollListeners;
+    private boolean unScroll;
+
+    static {
+        t2o.a(724566097);
+        t2o.a(724566110);
+        t2o.a(724566109);
+        t2o.a(724566095);
+    }
+
+    public TListView(Context context, AttributeSet attributeSet, int i) {
+        super(context, attributeSet, i);
+        this.mFeatureList = new FeatureList<>(this);
+        this.mOnScrollListeners = new ArrayList();
+        this.unScroll = false;
+        super.setOnScrollListener(this);
+        setOverScrollMode(2);
+        this.mFeatureList.init(context, attributeSet, i);
+    }
+
+    public static /* synthetic */ Object ipc$super(TListView tListView, String str, Object... objArr) {
+        switch (str.hashCode()) {
+            case -2012646654:
+                super.onWindowFocusChanged(((Boolean) objArr[0]).booleanValue());
+                return null;
+            case -1952076612:
+                return new Boolean(super.drawChild((Canvas) objArr[0], (View) objArr[1], ((Number) objArr[2]).longValue()));
+            case -1838743131:
+                super.setMeasuredDimension(((Number) objArr[0]).intValue(), ((Number) objArr[1]).intValue());
+                return null;
+            case -1665133574:
+                super.draw((Canvas) objArr[0]);
+                return null;
+            case -1488275586:
+                super.setOnScrollListener((AbsListView.OnScrollListener) objArr[0]);
+                return null;
+            case -1447998406:
+                return new Boolean(super.onTouchEvent((MotionEvent) objArr[0]));
+            case -1117127205:
+                super.onDraw((Canvas) objArr[0]);
+                return null;
+            case -894236565:
+                super.computeScroll();
+                return null;
+            case -429021187:
+                super.setAdapter((ListAdapter) objArr[0]);
+                return null;
+            case -407533570:
+                return new Boolean(super.onInterceptTouchEvent((MotionEvent) objArr[0]));
+            case -244855388:
+                super.onLayout(((Boolean) objArr[0]).booleanValue(), ((Number) objArr[1]).intValue(), ((Number) objArr[2]).intValue(), ((Number) objArr[3]).intValue(), ((Number) objArr[4]).intValue());
+                return null;
+            case 623593120:
+                super.dispatchDraw((Canvas) objArr[0]);
+                return null;
+            case 650865254:
+                super.onMeasure(((Number) objArr[0]).intValue(), ((Number) objArr[1]).intValue());
+                return null;
+            case 678958088:
+                super.onFocusChanged(((Boolean) objArr[0]).booleanValue(), ((Number) objArr[1]).intValue(), (Rect) objArr[2]);
+                return null;
+            case 1560169965:
+                super.measureChild((View) objArr[0], ((Number) objArr[1]).intValue(), ((Number) objArr[2]).intValue());
+                return null;
+            case 2075560917:
+                return new Boolean(super.dispatchTouchEvent((MotionEvent) objArr[0]));
+            default:
+                int hashCode = str.hashCode();
+                throw new InstantReloadException("String switch could not find '" + str + "' with hashcode " + hashCode + " in com/taobao/trade/uikit/feature/view/TListView");
+        }
+    }
+
+    public boolean addFeature(hv<? super ListView> hvVar) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("86bfac9d", new Object[]{this, hvVar})).booleanValue();
+        }
+        return this.mFeatureList.addFeature(hvVar);
+    }
+
+    public void clearFeatures() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("ed050131", new Object[]{this});
+        } else {
+            this.mFeatureList.clearFeatures();
+        }
+    }
+
+    @Override // android.view.View
+    public void computeScroll() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("cab3086b", new Object[]{this});
+            return;
+        }
+        int size = this.mFeatureList.size();
+        for (int i = 0; i < size; i++) {
+            hv hvVar = this.mFeatureList.get(i);
+            if (hvVar instanceof qxo) {
+                ((qxo) hvVar).beforeComputeScroll();
+            }
+        }
+        super.computeScroll();
+        for (int i2 = size - 1; i2 >= 0; i2--) {
+            hv hvVar2 = this.mFeatureList.get(i2);
+            if (hvVar2 instanceof qxo) {
+                ((qxo) hvVar2).afterComputeScroll();
+            }
+        }
+    }
+
+    @Override // android.widget.ListView, android.widget.AbsListView, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("252b46a0", new Object[]{this, canvas});
+            return;
+        }
+        int size = this.mFeatureList.size();
+        for (int i = 0; i < size; i++) {
+            hv hvVar = this.mFeatureList.get(i);
+            if (hvVar instanceof a33) {
+                ((a33) hvVar).beforeDispatchDraw(canvas);
+            }
+        }
+        super.dispatchDraw(canvas);
+        for (int i2 = size - 1; i2 >= 0; i2--) {
+            hv hvVar2 = this.mFeatureList.get(i2);
+            if (hvVar2 instanceof a33) {
+                ((a33) hvVar2).afterDispatchDraw(canvas);
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("7bb68bd5", new Object[]{this, motionEvent})).booleanValue();
+        }
+        int size = this.mFeatureList.size();
+        for (int i = 0; i < size; i++) {
+            hv hvVar = this.mFeatureList.get(i);
+            if (hvVar instanceof h5u) {
+                ((h5u) hvVar).beforeDispatchTouchEvent(motionEvent);
+            }
+        }
+        boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+        for (int i2 = size - 1; i2 >= 0; i2--) {
+            hv hvVar2 = this.mFeatureList.get(i2);
+            if (hvVar2 instanceof h5u) {
+                ((h5u) hvVar2).afterDispatchTouchEvent(motionEvent);
+            }
+        }
+        return dispatchTouchEvent;
+    }
+
+    @Override // android.widget.AbsListView, android.view.View
+    public void draw(Canvas canvas) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("9cc013fa", new Object[]{this, canvas});
+            return;
+        }
+        int size = this.mFeatureList.size();
+        for (int i = 0; i < size; i++) {
+            hv hvVar = this.mFeatureList.get(i);
+            if (hvVar instanceof a33) {
+                ((a33) hvVar).beforeDraw(canvas);
+            }
+        }
+        super.draw(canvas);
+        for (int i2 = size - 1; i2 >= 0; i2--) {
+            hv hvVar2 = this.mFeatureList.get(i2);
+            if (hvVar2 instanceof a33) {
+                ((a33) hvVar2).afterDraw(canvas);
+            }
+        }
+    }
+
+    public boolean drawChild(Canvas canvas, View view, long j, int i) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("e9105d4f", new Object[]{this, canvas, view, new Long(j), new Integer(i)})).booleanValue();
+        }
+        return super.drawChild(canvas, view, j);
+    }
+
+    public hv<? super ListView> findFeature(Class<? extends hv<? super ListView>> cls) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (hv) ipChange.ipc$dispatch("265698fa", new Object[]{this, cls});
+        }
+        return this.mFeatureList.findFeature(cls);
+    }
+
+    public void init(Context context, AttributeSet attributeSet, int i) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("aa26a346", new Object[]{this, context, attributeSet, new Integer(i)});
+        } else {
+            this.mFeatureList.init(context, attributeSet, i);
+        }
+    }
+
+    public boolean isUnScroll() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("cbc76e9b", new Object[]{this})).booleanValue();
+        }
+        return this.unScroll;
+    }
+
+    public void measureChild(View view, int i, int i2, int i3) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("42cbe2b6", new Object[]{this, view, new Integer(i), new Integer(i2), new Integer(i3)});
+        } else {
+            super.measureChild(view, i, i2);
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("bd69fddb", new Object[]{this, canvas});
+            return;
+        }
+        int size = this.mFeatureList.size();
+        for (int i = 0; i < size; i++) {
+            hv hvVar = this.mFeatureList.get(i);
+            if (hvVar instanceof a33) {
+                ((a33) hvVar).beforeOnDraw(canvas);
+            }
+        }
+        super.onDraw(canvas);
+        for (int i2 = size - 1; i2 >= 0; i2--) {
+            hv hvVar2 = this.mFeatureList.get(i2);
+            if (hvVar2 instanceof a33) {
+                ((a33) hvVar2).afterOnDraw(canvas);
+            }
+        }
+    }
+
+    @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
+    public void onFocusChanged(boolean z, int i, Rect rect) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("28781408", new Object[]{this, new Boolean(z), new Integer(i), rect});
+            return;
+        }
+        int size = this.mFeatureList.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            hv hvVar = this.mFeatureList.get(i2);
+            if (hvVar instanceof ps9) {
+                ((ps9) hvVar).beforeOnFocusChanged(z, i, rect);
+            }
+        }
+        super.onFocusChanged(z, i, rect);
+        for (int i3 = size - 1; i3 >= 0; i3--) {
+            hv hvVar2 = this.mFeatureList.get(i3);
+            if (hvVar2 instanceof ps9) {
+                ((ps9) hvVar2).afterOnFocusChanged(z, i, rect);
+            }
+        }
+    }
+
+    @Override // android.widget.AbsListView, android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("e7b587fe", new Object[]{this, motionEvent})).booleanValue();
+        }
+        boolean onInterceptTouchEvent = super.onInterceptTouchEvent(motionEvent);
+        for (int size = this.mFeatureList.size() - 1; size >= 0; size--) {
+            hv hvVar = this.mFeatureList.get(size);
+            if (hvVar instanceof qif) {
+                onInterceptTouchEvent = ((qif) hvVar).onInterceptTouchEvent(motionEvent) | onInterceptTouchEvent;
+            }
+        }
+        return onInterceptTouchEvent;
+    }
+
+    @Override // android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("f167cda4", new Object[]{this, new Boolean(z), new Integer(i), new Integer(i2), new Integer(i3), new Integer(i4)});
+            return;
+        }
+        int size = this.mFeatureList.size();
+        for (int i5 = 0; i5 < size; i5++) {
+            hv hvVar = this.mFeatureList.get(i5);
+            if (hvVar instanceof rig) {
+                ((rig) hvVar).beforeOnLayout(z, i, i2, i3, i4);
+            }
+        }
+        super.onLayout(z, i, i2, i3, i4);
+        for (int i6 = size - 1; i6 >= 0; i6--) {
+            hv hvVar2 = this.mFeatureList.get(i6);
+            if (hvVar2 instanceof rig) {
+                ((rig) hvVar2).afterOnLayout(z, i, i2, i3, i4);
+            }
+        }
+    }
+
+    @Override // android.widget.ListView, android.widget.AbsListView, android.view.View
+    public void onMeasure(int i, int i2) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("26cb6a66", new Object[]{this, new Integer(i), new Integer(i2)});
+        } else if (this.unScroll) {
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(536870911, Integer.MIN_VALUE));
+        } else {
+            int size = this.mFeatureList.size();
+            for (int i3 = 0; i3 < size; i3++) {
+                hv hvVar = this.mFeatureList.get(i3);
+                if (hvVar instanceof kbi) {
+                    ((kbi) hvVar).beforeOnMeasure(i, i2);
+                }
+            }
+            super.onMeasure(i, i2);
+            for (int i4 = size - 1; i4 >= 0; i4--) {
+                hv hvVar2 = this.mFeatureList.get(i4);
+                if (hvVar2 instanceof kbi) {
+                    ((kbi) hvVar2).afterOnMeasure(i, i2);
+                }
+            }
+        }
+    }
+
+    @Override // android.widget.AbsListView.OnScrollListener
+    public void onScroll(AbsListView absListView, int i, int i2, int i3) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("2eb0734b", new Object[]{this, absListView, new Integer(i), new Integer(i2), new Integer(i3)});
+            return;
+        }
+        int size = this.mOnScrollListeners.size();
+        for (int i4 = 0; i4 < size; i4++) {
+            this.mOnScrollListeners.get(i4).onScroll(absListView, i, i2, i3);
+        }
+    }
+
+    @Override // android.widget.AbsListView.OnScrollListener
+    public void onScrollStateChanged(AbsListView absListView, int i) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("532cfb08", new Object[]{this, absListView, new Integer(i)});
+            return;
+        }
+        int size = this.mOnScrollListeners.size();
+        for (int i2 = 0; i2 < size; i2++) {
+            if (this.mOnScrollListeners.get(i2) != null) {
+                this.mOnScrollListeners.get(i2).onScrollStateChanged(absListView, i);
+            }
+        }
+    }
+
+    @Override // android.widget.AbsListView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("a9b14c3a", new Object[]{this, motionEvent})).booleanValue();
+        }
+        int size = this.mFeatureList.size();
+        for (int i = 0; i < size; i++) {
+            hv hvVar = this.mFeatureList.get(i);
+            if (hvVar instanceof h5u) {
+                ((h5u) hvVar).beforeOnTouchEvent(motionEvent);
+            }
+        }
+        boolean onTouchEvent = super.onTouchEvent(motionEvent);
+        for (int i2 = size - 1; i2 >= 0; i2--) {
+            hv hvVar2 = this.mFeatureList.get(i2);
+            if (hvVar2 instanceof h5u) {
+                ((h5u) hvVar2).afterOnTouchEvent(motionEvent);
+            }
+        }
+        return onTouchEvent;
+    }
+
+    @Override // android.widget.AbsListView, android.view.View
+    public void onWindowFocusChanged(boolean z) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("88097302", new Object[]{this, new Boolean(z)});
+            return;
+        }
+        int size = this.mFeatureList.size();
+        for (int i = 0; i < size; i++) {
+            hv hvVar = this.mFeatureList.get(i);
+            if (hvVar instanceof ps9) {
+                ((ps9) hvVar).beforeOnWindowFocusChanged(z);
+            }
+        }
+        super.onWindowFocusChanged(z);
+        for (int i2 = size - 1; i2 >= 0; i2--) {
+            hv hvVar2 = this.mFeatureList.get(i2);
+            if (hvVar2 instanceof ps9) {
+                ((ps9) hvVar2).afterOnWindowFocusChanged(z);
+            }
+        }
+    }
+
+    public boolean removeFeature(Class<? extends hv<? super ListView>> cls) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return ((Boolean) ipChange.ipc$dispatch("9158b08", new Object[]{this, cls})).booleanValue();
+        }
+        return this.mFeatureList.removeFeature(cls);
+    }
+
+    public void removeOnScrollListener(AbsListView.OnScrollListener onScrollListener) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("ee590f9c", new Object[]{this, onScrollListener});
+        } else if (onScrollListener != null) {
+            this.mOnScrollListeners.remove(onScrollListener);
+        }
+    }
+
+    public void setMeasuredDimension(long j, long j2) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("926779c5", new Object[]{this, new Long(j), new Long(j2)});
+        } else {
+            super.setMeasuredDimension((int) j, (int) j2);
+        }
+    }
+
+    @Override // android.widget.AbsListView
+    public void setOnScrollListener(AbsListView.OnScrollListener onScrollListener) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("a74ab77e", new Object[]{this, onScrollListener});
+        } else {
+            this.mOnScrollListeners.add(onScrollListener);
+        }
+    }
+
+    public void setUnScroll(boolean z) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("7c1de2e5", new Object[]{this, new Boolean(z)});
+        } else {
+            this.unScroll = z;
+        }
+    }
+
+    @Override // android.widget.ListView, android.widget.AbsListView
+    public void setAdapter(ListAdapter listAdapter) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("e66da7fd", new Object[]{this, listAdapter});
+            return;
+        }
+        int size = this.mFeatureList.size();
+        for (int i = 0; i < size; i++) {
+            hv hvVar = this.mFeatureList.get(i);
+            if (hvVar instanceof md0) {
+                listAdapter = ((md0) hvVar).wrapAdapter(listAdapter);
+            }
+        }
+        super.setAdapter(listAdapter);
+    }
+
+    public TListView(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, 0);
+    }
+
+    public TListView(Context context) {
+        this(context, null);
+    }
+}

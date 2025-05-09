@@ -1,0 +1,41 @@
+package com.taobao.alimama.common;
+
+import com.android.alibaba.ip.runtime.InstantReloadException;
+import com.android.alibaba.ip.runtime.IpChange;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes4.dex */
+public enum NetRetryType {
+    NONE("none"),
+    MEMORY("memory"),
+    DISK("disk");
+    
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+    private final String value;
+
+    NetRetryType(String str) {
+        this.value = str;
+    }
+
+    public static /* synthetic */ Object ipc$super(NetRetryType netRetryType, String str, Object... objArr) {
+        str.hashCode();
+        int hashCode = str.hashCode();
+        throw new InstantReloadException("String switch could not find '" + str + "' with hashcode " + hashCode + " in com/taobao/alimama/common/NetRetryType");
+    }
+
+    public static NetRetryType valueOf(String str) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (NetRetryType) ipChange.ipc$dispatch("c427d57f", new Object[]{str});
+        }
+        return (NetRetryType) Enum.valueOf(NetRetryType.class, str);
+    }
+
+    public String getValue() {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            return (String) ipChange.ipc$dispatch("5308aa1e", new Object[]{this});
+        }
+        return this.value;
+    }
+}

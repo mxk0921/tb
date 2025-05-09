@@ -1,0 +1,45 @@
+package tb;
+
+import com.alibaba.android.umbrella.link.UMLinkLogInterface;
+import com.android.alibaba.ip.runtime.IpChange;
+import java.util.Map;
+
+/* compiled from: Taobao */
+/* loaded from: /Users/corson/Downloads/taobao_decompiled/build/apk/classes8.dex */
+public final class pdv {
+    public static volatile transient /* synthetic */ IpChange $ipChange;
+
+    /* renamed from: a  reason: collision with root package name */
+    public static final UMLinkLogInterface f26035a = hdv.a();
+
+    static {
+        t2o.a(668991517);
+    }
+
+    public static void a(String str, String str2, Map<String, String> map, String str3, String str4) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("58160feb", new Object[]{str, str2, map, str3, str4});
+        } else {
+            f26035a.commitFailure(str, str2, "1.0", "page_shop", "shop_router", map, str3, str4);
+        }
+    }
+
+    public static void b(String str, String str2, Map<String, String> map) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("71bb57be", new Object[]{str, str2, map});
+        } else {
+            f26035a.commitSuccess(str, str2, "1.0", "page_shop", "shop_router", map);
+        }
+    }
+
+    public static void c(String str, String str2, String str3, String str4) {
+        IpChange ipChange = $ipChange;
+        if (ipChange instanceof IpChange) {
+            ipChange.ipc$dispatch("f08b82f3", new Object[]{str, str2, str3, str4});
+        } else {
+            f26035a.logError("page_shop", "shop_router", str, null, str2, str3, null, cyu.c(str4));
+        }
+    }
+}
